@@ -21,9 +21,10 @@
 
 ### Group By
 
-***1.*** 
+***1.*** SELECT COUNT(id) AS `n_students` , YEAR(enrolment_date) AS `enrolment` FROM `students` GROUP BY YEAR(enrolment_date);
 
-***2.*** 
+
+***2.*** SELECT COUNT(id) AS `n_teachers`, `office_address` FROM `teachers` GROUP BY `office_address`;
 
 ***3.*** 
 
