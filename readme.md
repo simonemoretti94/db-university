@@ -26,13 +26,14 @@
 
 ***2.*** SELECT COUNT(id) AS `n_teachers`, `office_address` FROM `teachers` GROUP BY `office_address`;
 
-***3.*** 
+***3.*** SELECT COUNT(exam_id) AS `exam`, ROUND(AVG(vote) , 0) AS `vote_avg` FROM `exam_student` GROUP BY `vote`;
 
-***4.*** 
+***4.*** SELECT COUNT(id) AS `id_department`, `name` AS `course` FROM `degrees` GROUP BY `name`;
 
 ### Joins
 
-***1.*** 
+***1.*** SELECT * FROM `students` INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`id` = 53;
+
 
 ***2.*** 
 
