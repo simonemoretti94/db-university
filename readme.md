@@ -35,9 +35,12 @@
 ***1.*** SELECT * FROM `students` INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`id` = 53;
 
 
-***2.*** 
+***2.*** SELECT * FROM `degrees` INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` WHERE `degrees`.`level` = 'magistrale' AND `degrees`.`department_id` = 7;
 
-***3.*** 
+
+***3.***  SELECT `course_id` FROM `course_teacher` INNER JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id` WHERE `teachers`.`name`= 'Fulvio' AND `teachers`.`surname` = 'Amato';
+
+
 
 ***4.*** 
 
