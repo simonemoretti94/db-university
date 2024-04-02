@@ -113,3 +113,7 @@ INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
 WHERE `departments`.`name` = 'Dipartimento di Matematica';
 
 ***7.*** 
+SELECT COUNT(`exam_student`.`student_id`) AS `times_id`
+FROM `exam_student`
+WHERE `exam_student`.`vote` >= 18
+GROUP BY `exam_student`.`student_id`;
