@@ -91,9 +91,25 @@ FROM ((`students`
 INNER JOIN `degrees` ON `students`.`degree_id`= `degrees`.`id`) INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`)
 ORDER BY `students`.`surname`, `students`.`name`;
 
-
-***5*** 
+***5***
+SELECT
+`courses`.`id` AS `ID_course`,
+`course_teacher`.`teacher_id` AS `ID_teacher`,
+`teachers`.`name` , `teachers`.`surname`
+FROM ((`courses`
+INNER JOIN `course_teacher`ON `courses`.`id` = `course_teacher`.`course_id` )
+INNER JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`);
 
 ***6.*** 
+SELECT `teachers`.`name`, `teachers`.`surname` , `departments`.`name` 
+FROM `teachers`
+INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+INNER JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+INNER JOIN `exams` ON `courses`.`id` = `exams`.`course_id`
+INNER JOIN `exam_student` ON `exams`.`id` = `exam_student`.`exam_id`
+INNER JOIN `students` ON `exam_student`.`student_id` = `students`.`id`
+INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name` = 'Dipartimento di Matematica';
 
 ***7.*** 
